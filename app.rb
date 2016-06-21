@@ -5,12 +5,14 @@ class App < Sinatra::Base
     @error = params['error']
     @email = params['email'] == nil ? "\"\"" : "\"#{params['email']}\""
     @full_name = params['full_name'] == nil ? "\"\"" : "\"#{params['full_name']}\""
+    @City = params['City'] == nil ? "\"\"" : "\"#{params['City']}\""
     erb :home
   end
 
   post '/subscribe' do
     @full_name = params[:full_name]
     @email = params[:email]
+    @City = params[:City]
 
     if !@email.match(/.+@.+/)
       redirect to('/?error=email&full_name=' + @full_name + '&email=' + @email)
