@@ -1,44 +1,35 @@
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-</head>
+<style type="text/css">
+#wrap {
+   width:600px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:300px;
+}
+#right_col {
+   float:right;
+   width:300px;
+}
+</style>
 
-<div>
-
-  
-
-  <div data-role="page" id="pageone">
-
-
-  <div data-role="main" class="ui-content">
-    <div class="ui-grid-a">
-      <div class="ui-block-a">
-
-        <h3>Today</h3>
+<div id="wrap">
+    <div id="left_col">
+         <h3>Today</h3>
     <ol>
       <% @today.each do |item| %>
         <li><%= item.first %>: <%= item.last %></li>
       <% end %>
     </ol>
-      </div>
-
-      <div class="ui-block-b">
-
-      <h3>Tomorrow</h3>
+    </div>
+    <div id="right_col">
+        <h3>Tomorrow</h3>
     <ol>
       <% @tomorrow.each do |item| %>
         <li><%= item.first %>: <%= item.last %></li>
       <% end %>
     </ol>
-      </div>
     </div>
-  </div>
-
-
-
-
-
-
 </div>
+
+
