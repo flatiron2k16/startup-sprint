@@ -3,6 +3,8 @@ require_relative 'config/environment'
 class App < Sinatra::Base
   get '/' do
     @error = params['error']
+    @email = params['email'] == nil ? "\"\"" : "\"#{params['email']}\""
+    @full_name = params['full_name'] == nil ? "\"\"" : "\"#{params['full_name']}\""
     erb :home
   end
 
