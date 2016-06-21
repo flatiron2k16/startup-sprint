@@ -46,6 +46,10 @@ class App < Sinatra::Base
     erb :reddit
   end
 
+  get '/home' do
+    redirect '/'
+  end
+
   get '/schedule' do
     @today = [
       ['7:00am', 'Wake up'],
